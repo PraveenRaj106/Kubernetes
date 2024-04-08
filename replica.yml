@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replica
+spec:
+  template: 
+    metadata:
+      name: pod1
+      labels:
+        app: build
+        type: back-end
+    spec: 
+      containers:
+        - name: con1
+          image: nginx
+  replicas: 5
